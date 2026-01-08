@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Default Categories -->
+        <record id="category_work" model="todo.category">
+            <field name="name">Work</field>
+            <field name="description">Work-related tasks</field>
+            <field name="color">1</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="category_personal" model="todo.category">
+            <field name="name">Personal</field>
+            <field name="description">Personal tasks and errands</field>
+            <field name="color">2</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="category_shopping" model="todo.category">
+            <field name="name">Shopping</field>
+            <field name="description">Shopping lists and purchases</field>
+            <field name="color">3</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="category_health" model="todo.category">
+            <field name="name">Health &amp; Fitness</field>
+            <field name="description">Health and fitness related tasks</field>
+            <field name="color">4</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Default Tags -->
+        <record id="tag_urgent" model="todo.tag">
+            <field name="name">Urgent</field>
+            <field name="color">1</field>
+        </record>
+
+        <record id="tag_important" model="todo.tag">
+            <field name="name">Important</field>
+            <field name="color">2</field>
+        </record>
+
+        <record id="tag_review" model="todo.tag">
+            <field name="name">Needs Review</field>
+            <field name="color">3</field>
+        </record>
+
+        <record id="tag_waiting" model="todo.tag">
+            <field name="name">Waiting</field>
+            <field name="color">4</field>
+        </record>
+
+        <record id="tag_followup" model="todo.tag">
+            <field name="name">Follow Up</field>
+            <field name="color">5</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_todo_task_user,todo.task.user,model_todo_task,group_todo_user,1,1,1,1
+access_todo_task_manager,todo.task.manager,model_todo_task,group_todo_manager,1,1,1,1
+access_todo_category_user,todo.category.user,model_todo_category,group_todo_user,1,0,0,0
+access_todo_category_manager,todo.category.manager,model_todo_category,group_todo_manager,1,1,1,1
+access_todo_tag_user,todo.tag.user,model_todo_tag,group_todo_user,1,0,0,0
+access_todo_tag_manager,todo.tag.manager,model_todo_tag,group_todo_manager,1,1,1,1
+access_todo_task_wizard_user,todo.task.wizard.user,model_todo_task_wizard,group_todo_user,1,1,1,1
+access_todo_weekly_task_user,todo.weekly.task.user,model_todo_weekly_task,group_todo_user,1,1,1,1
+access_todo_weekly_task_manager,todo.weekly.task.manager,model_todo_weekly_task,group_todo_manager,1,1,1,1
+access_todo_weekly_wizard_user,todo.weekly.wizard.user,model_todo_weekly_wizard,group_todo_user,1,1,1,1

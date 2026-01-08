@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Weekly Tasks for Current Week -->
+        
+        <!-- Monday Tasks -->
+        <record id="demo_weekly_mon_must_1" model="todo.weekly.task">
+            <field name="name">Review project requirements</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday())).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">a_must</field>
+            <field name="is_done" eval="True"/>
+        </record>
+        <record id="demo_weekly_mon_should_1" model="todo.weekly.task">
+            <field name="name">Update documentation</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday())).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">b_should</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_mon_could_1" model="todo.weekly.task">
+            <field name="name">Team standup meeting</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday())).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="True"/>
+        </record>
+
+        <!-- Tuesday Tasks -->
+        <record id="demo_weekly_tue_must_1" model="todo.weekly.task">
+            <field name="name">Complete sprint tasks</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">a_must</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_tue_should_1" model="todo.weekly.task">
+            <field name="name">Code review</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">b_should</field>
+            <field name="is_done" eval="True"/>
+        </record>
+        <record id="demo_weekly_tue_could_1" model="todo.weekly.task">
+            <field name="name">Research new technologies</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+
+        <!-- Wednesday Tasks -->
+        <record id="demo_weekly_wed_must_1" model="todo.weekly.task">
+            <field name="name">Client presentation</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">a_must</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_wed_should_1" model="todo.weekly.task">
+            <field name="name">Prepare demo environment</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">b_should</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_wed_could_1" model="todo.weekly.task">
+            <field name="name">Organize workspace</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+
+        <!-- Thursday Tasks -->
+        <record id="demo_weekly_thu_must_1" model="todo.weekly.task">
+            <field name="name">Deploy to staging</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">a_must</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_thu_should_1" model="todo.weekly.task">
+            <field name="name">Write unit tests</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">b_should</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_thu_could_1" model="todo.weekly.task">
+            <field name="name">Update personal notes</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+
+        <!-- Friday Tasks -->
+        <record id="demo_weekly_fri_must_1" model="todo.weekly.task">
+            <field name="name">Weekly report</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=4)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">a_must</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_fri_should_1" model="todo.weekly.task">
+            <field name="name">Plan next week</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=4)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">b_should</field>
+            <field name="is_done" eval="False"/>
+        </record>
+        <record id="demo_weekly_fri_could_1" model="todo.weekly.task">
+            <field name="name">Team retrospective</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=4)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+
+        <!-- Saturday Tasks -->
+        <record id="demo_weekly_sat_could_1" model="todo.weekly.task">
+            <field name="name">Personal development reading</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=5)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+
+        <!-- Sunday Tasks -->
+        <record id="demo_weekly_sun_could_1" model="todo.weekly.task">
+            <field name="name">Week review and reflection</field>
+            <field name="task_date" eval="(DateTime.today() - relativedelta(days=DateTime.today().weekday()) + relativedelta(days=6)).strftime('%Y-%m-%d')"/>
+            <field name="priority_level">c_could</field>
+            <field name="is_done" eval="False"/>
+        </record>
+    </data>
+</odoo>

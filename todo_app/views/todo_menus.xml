@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_todo_root"
+              name="Todo"
+              sequence="50"
+              web_icon="todo_app,static/description/icon.png"/>
+
+    <!-- =====================================================
+         WEEKLY PLANNER MENUS (Primary Feature)
+         ===================================================== -->
+    <menuitem id="menu_todo_weekly"
+              name="Weekly Planner"
+              parent="menu_todo_root"
+              sequence="5"/>
+
+    <menuitem id="menu_todo_weekly_planner"
+              name="My Week"
+              parent="menu_todo_weekly"
+              action="action_todo_weekly_planner"
+              sequence="10"/>
+
+    <menuitem id="menu_todo_weekly_by_priority"
+              name="By Priority"
+              parent="menu_todo_weekly"
+              action="action_todo_weekly_by_priority"
+              sequence="20"/>
+
+    <menuitem id="menu_todo_weekly_all"
+              name="All Tasks"
+              parent="menu_todo_weekly"
+              action="action_todo_weekly_all"
+              sequence="30"/>
+
+    <menuitem id="menu_todo_weekly_wizard"
+              name="Week Operations"
+              parent="menu_todo_weekly"
+              action="action_todo_weekly_wizard"
+              sequence="90"/>
+
+    <!-- =====================================================
+         STANDARD TASKS MENUS
+         ===================================================== -->
+    <menuitem id="menu_todo_tasks"
+              name="Tasks"
+              parent="menu_todo_root"
+              sequence="10"/>
+
+    <menuitem id="menu_todo_my_tasks"
+              name="My Tasks"
+              parent="menu_todo_tasks"
+              action="action_todo_my_tasks"
+              sequence="10"/>
+
+    <menuitem id="menu_todo_all_tasks"
+              name="All Tasks"
+              parent="menu_todo_tasks"
+              action="action_todo_task"
+              sequence="20"
+              groups="group_todo_manager"/>
+
+    <!-- =====================================================
+         CONFIGURATION MENU
+         ===================================================== -->
+    <menuitem id="menu_todo_configuration"
+              name="Configuration"
+              parent="menu_todo_root"
+              sequence="90"
+              groups="group_todo_manager"/>
+
+    <menuitem id="menu_todo_categories"
+              name="Categories"
+              parent="menu_todo_configuration"
+              action="action_todo_category"
+              sequence="10"/>
+
+    <menuitem id="menu_todo_tags"
+              name="Tags"
+              parent="menu_todo_configuration"
+              action="action_todo_tag"
+              sequence="20"/>
+</odoo>

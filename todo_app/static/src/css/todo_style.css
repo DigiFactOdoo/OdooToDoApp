@@ -1,0 +1,232 @@
+/* Todo App Custom Styles */
+
+/* =====================================================
+   TASK CARDS
+   ===================================================== */
+.o_todo_task_card {
+    border-radius: 8px;
+    transition: box-shadow 0.2s ease;
+}
+
+.o_todo_task_card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Priority Colors */
+.o_priority_urgent {
+    border-left: 4px solid #dc3545 !important;
+}
+
+.o_priority_high {
+    border-left: 4px solid #fd7e14 !important;
+}
+
+.o_priority_normal {
+    border-left: 4px solid #0d6efd !important;
+}
+
+.o_priority_low {
+    border-left: 4px solid #6c757d !important;
+}
+
+/* Overdue Task Styling */
+.o_todo_overdue {
+    background-color: #fff5f5 !important;
+}
+
+.o_todo_overdue .o_kanban_record_title {
+    color: #dc3545;
+}
+
+/* Progress Bar Enhancement */
+.o_todo_progress .progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+/* Tag Styling */
+.o_todo_tags .badge {
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+/* Kanban Column Headers */
+.o_todo_kanban .o_kanban_header {
+    font-weight: 600;
+    padding: 12px;
+}
+
+/* Task Form Styling */
+.o_todo_form .oe_title h1 {
+    font-size: 1.5rem;
+}
+
+/* Calendar Event Colors */
+.o_todo_calendar .fc-event {
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+/* Dashboard Stats */
+.o_todo_stat_card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.o_todo_stat_number {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* =====================================================
+   WEEKLY PLANNER SPECIFIC STYLES
+   ===================================================== */
+
+/* Weekly Kanban Board */
+.o_weekly_kanban .o_kanban_group {
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.o_weekly_kanban .o_kanban_header_title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Priority Level Cards */
+.o_weekly_task_card {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.o_weekly_task_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* A - Must Do (Red) */
+.o_priority_a_must {
+    border-left: 4px solid #dc3545 !important;
+    background: linear-gradient(to right, rgba(220, 53, 69, 0.05), transparent) !important;
+}
+
+/* B - Should Do (Yellow/Orange) */
+.o_priority_b_should {
+    border-left: 4px solid #ffc107 !important;
+    background: linear-gradient(to right, rgba(255, 193, 7, 0.05), transparent) !important;
+}
+
+/* C - Could Do (Blue) */
+.o_priority_c_could {
+    border-left: 4px solid #0d6efd !important;
+    background: linear-gradient(to right, rgba(13, 110, 253, 0.05), transparent) !important;
+}
+
+/* Completed Task Styling */
+.oe_kanban_card_done {
+    opacity: 0.7;
+}
+
+.oe_kanban_card_done .o_kanban_record_title {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+/* Week Navigation */
+.o_weekly_nav_btn {
+    min-width: 40px;
+    font-size: 1.2rem;
+}
+
+/* Week Range Display */
+.o_week_range_display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Day Column Headers in Kanban */
+.o_kanban_group_header {
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    padding: 12px;
+}
+
+/* Progress Indicator */
+.o_weekly_progress {
+    height: 6px;
+    border-radius: 3px;
+    background: #e9ecef;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.o_weekly_progress_bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.o_weekly_progress_bar.complete {
+    background: linear-gradient(to right, #28a745, #20c997);
+}
+
+.o_weekly_progress_bar.in_progress {
+    background: linear-gradient(to right, #007bff, #6f42c1);
+}
+
+/* Quick Create Styling */
+.o_kanban_quick_create {
+    border-radius: 8px;
+    border: 2px dashed #dee2e6;
+}
+
+.o_kanban_quick_create:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+    .o_todo_kanban .o_kanban_record {
+        padding: 12px;
+    }
+    
+    .o_todo_stat_number {
+        font-size: 1.8rem;
+    }
+    
+    .o_weekly_kanban .o_kanban_group {
+        min-width: 150px;
+    }
+    
+    .o_week_range_display {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+/* =====================================================
+   DARK MODE SUPPORT
+   ===================================================== */
+@media (prefers-color-scheme: dark) {
+    .o_priority_a_must {
+        background: linear-gradient(to right, rgba(220, 53, 69, 0.1), transparent) !important;
+    }
+    
+    .o_priority_b_should {
+        background: linear-gradient(to right, rgba(255, 193, 7, 0.1), transparent) !important;
+    }
+    
+    .o_priority_c_could {
+        background: linear-gradient(to right, rgba(13, 110, 253, 0.1), transparent) !important;
+    }
+}

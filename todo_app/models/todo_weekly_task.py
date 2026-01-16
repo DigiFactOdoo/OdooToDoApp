@@ -178,6 +178,33 @@ class TodoWeeklyTask(models.Model):
     # -------------------------------------------------------------------------
     
     @api.model
+    def _search(self, domain, offset=0, limit=None, order=None, access_rights_uid=None):
+        """Override search to handle week filter context."""
+        # Handle week filter from context
+        week_filter = self.env.context.get('week_filter')
+        if week_filter:
+            today = fields.Date.today()
+            weekday = today.weekday()
+            this_week_start = today - timedelta(days=weekday)
+            
+            if week_filter == 'this_week':
+                week_start = this_week_start
+            elif week_filter == 'next_week':
+                week_start = this_week_start + timedelta(days=7)
+            elif week_filter == 'last_week':
+                week_start = this_week_start - timedelta(days=7)
+            else:
+                week_start = None
+            
+            if week_start:
+                domain = domain + [('week_start', '=', week_start)]
+        
+        return super(TodoWeeklyTask, self)._search(
+            domain, offset=offset, limit=limit, order=order, 
+            access_rights_uid=access_rights_uid
+        )
+    
+    @api.model
     def get_week_tasks(self, week_start_date=None, user_id=None):
         """Get all tasks for a specific week."""
         if not week_start_date:

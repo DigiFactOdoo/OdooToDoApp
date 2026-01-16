@@ -41,6 +41,7 @@ services:
     command: --
       --dev=reload
       --log-level=info
+      -u todo_app
 
 volumes:
   odoo-web-data:

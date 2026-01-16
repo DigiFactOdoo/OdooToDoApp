@@ -184,6 +184,27 @@ class TodoTask(models.Model):
     # CRUD Methods
     # -------------------------------------------------------------------------
     
+    @api.model
+    def _search(self, domain, offset=0, limit=None, order=None, access_rights_uid=None):
+        """Override search to handle deadline filter context."""
+        # Handle deadline filter from context
+        deadline_filter = self.env.context.get('deadline_filter')
+        if deadline_filter:
+            today = fields.Date.today()
+            
+            if deadline_filter == 'today':
+                domain = domain + [('deadline', '=', today)]
+            elif deadline_filter == 'this_week':
+                weekday = today.weekday()
+                week_start = today - timedelta(days=weekday)
+                week_end = week_start + timedelta(days=6)
+                domain = domain + [('deadline', '>=', week_start), ('deadline', '<=', week_end)]
+        
+        return super(TodoTask, self)._search(
+            domain, offset=offset, limit=limit, order=order, 
+            access_rights_uid=access_rights_uid
+        )
+    
     @api.model_create_multi
     def create(self, vals_list):
         """Override create to add custom logic."""

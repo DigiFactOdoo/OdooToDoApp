@@ -193,11 +193,11 @@
                         domain="[('user_id', '=', uid)]"/>
                 <separator/>
                 <filter name="filter_this_week" string="This Week"
-                        domain="[('week_start', '=', (context_today() - datetime.timedelta(days=context_today().weekday())).strftime('%Y-%m-%d'))]"/>
+                        domain="[]" context="{'week_filter': 'this_week'}"/>
                 <filter name="filter_next_week" string="Next Week"
-                        domain="[('week_start', '=', (context_today() - datetime.timedelta(days=context_today().weekday()) + datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                        domain="[]" context="{'week_filter': 'next_week'}"/>
                 <filter name="filter_last_week" string="Last Week"
-                        domain="[('week_start', '=', (context_today() - datetime.timedelta(days=context_today().weekday()) - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                        domain="[]" context="{'week_filter': 'last_week'}"/>
                 <separator/>
                 <filter name="filter_not_done" string="Not Done" 
                         domain="[('is_done', '=', False)]"/>

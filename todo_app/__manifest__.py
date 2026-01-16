@@ -36,7 +36,7 @@ Technical Details
 For support, please contact: support@digifact.com
     """,
     'author': 'DigiFact',
-    'website': 'https://www.digifact.com',
+    'website': 'https://www.digifact.vn',
     'license': 'LGPL-3',
     'depends': [
         'base',

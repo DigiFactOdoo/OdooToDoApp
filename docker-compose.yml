@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: odoo_postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  odoo:
+    image: odoo:17.0
+    container_name: odoo_app
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8001:8069"
+      - "8072:8072"  # Longpolling for chat
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - ./todo_app:/mnt/extra-addons/todo_app
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+    restart: unless-stopped
+    command: --
+      --dev=reload
+      --log-level=info
+
+volumes:
+  odoo-web-data:
+    name: odoo_web_data
+  odoo-db-data:
+    name: odoo_db_data
